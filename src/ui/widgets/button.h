@@ -8,4 +8,5 @@ public:
 	void click();
 
 	std::function<void()> Handler;
+	bool                  Enabled = true;
 };

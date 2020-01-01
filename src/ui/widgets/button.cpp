@@ -2,7 +2,7 @@
 
 void Button::click()
 {
-	if (Handler) {
+	if (Enabled && Handler) {
 		Handler();
 	}
 }
