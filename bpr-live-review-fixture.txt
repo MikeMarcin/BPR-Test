@@ -1,0 +1,6 @@
+BetterPullReview disposable live-review fixture
+
+This pull request exists only for bounded BetterPullReview mutation and
+notification verification. It contains no production or private content.
+
+review-state: initial
