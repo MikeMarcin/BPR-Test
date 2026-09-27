@@ -7,7 +7,7 @@ RFC-0022 harmless fixture line 06
 RFC-0022 harmless fixture line 07
 RFC-0022 harmless fixture line 08
 RFC-0022 harmless fixture line 09
-RFC-0022 harmless fixture line 10
+RFC-0022 harmless fixture line 10 (changed for native hunk test)
 RFC-0022 harmless fixture line 11
 RFC-0022 harmless fixture line 12
 RFC-0022 harmless fixture line 13

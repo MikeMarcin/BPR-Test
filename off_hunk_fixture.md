@@ -7,7 +7,7 @@ Harmless Markdown fixture line 06.
 Harmless Markdown fixture line 07.
 Harmless Markdown fixture line 08.
 Harmless Markdown fixture line 09.
-Harmless Markdown fixture line 10.
+Harmless Markdown fixture line 10. (changed for native hunk test)
 Harmless Markdown fixture line 11.
 Harmless Markdown fixture line 12.
 Harmless Markdown fixture line 13.
