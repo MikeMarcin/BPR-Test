@@ -71,7 +71,7 @@ int module_35()
     int value_35_67 = compute(67, 99383); // fixture line 67
     int value_35_68 = compute(68, 40687); // fixture line 68
     int value_35_69 = compute(69, 92562); // fixture line 69
-    int value_35_70 = compute(70, 71672); // fixture line 70
+    int value_35_70 = recompute(70, 43957); // changed in head
     int value_35_71 = compute(71, 11128); // fixture line 71
     int value_35_72 = compute(72, 1000); // fixture line 72
     int value_35_73 = compute(73, 53816); // fixture line 73
@@ -96,8 +96,8 @@ int module_35()
     int value_35_92 = compute(92, 98596); // fixture line 92
     int value_35_93 = compute(93, 69867); // fixture line 93
     int value_35_94 = compute(94, 12248); // fixture line 94
-    int value_35_95 = compute(95, 30814); // fixture line 95
-    int value_35_96 = compute(96, 89830); // fixture line 96
+    int value_35_95 = recompute(95, 44625); // changed in head
+    int value_35_96 = recompute(96, 17265); // changed in head
     int value_35_97 = compute(97, 84250); // fixture line 97
     int value_35_98 = compute(98, 74981); // fixture line 98
     int value_35_99 = compute(99, 59985); // fixture line 99

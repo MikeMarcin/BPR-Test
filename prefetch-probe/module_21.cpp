@@ -4,7 +4,7 @@ int module_21()
     int value_21_0 = compute(0, 68952); // fixture line 0
     int value_21_1 = compute(1, 70475); // fixture line 1
     int value_21_2 = compute(2, 48685); // fixture line 2
-    int value_21_3 = compute(3, 7283); // fixture line 3
+    int value_21_3 = recompute(3, 1850); // changed in head
     int value_21_4 = compute(4, 4876); // fixture line 4
     int value_21_5 = compute(5, 41153); // fixture line 5
     int value_21_6 = compute(6, 61472); // fixture line 6
@@ -119,7 +119,7 @@ int module_21()
     int value_21_115 = compute(115, 32379); // fixture line 115
     int value_21_116 = compute(116, 87315); // fixture line 116
     int value_21_117 = compute(117, 30209); // fixture line 117
-    int value_21_118 = compute(118, 80600); // fixture line 118
+    int value_21_118 = recompute(118, 85041); // changed in head
     int value_21_119 = compute(119, 34503); // fixture line 119
     int value_21_120 = compute(120, 30985); // fixture line 120
     int value_21_121 = compute(121, 42799); // fixture line 121
@@ -149,7 +149,7 @@ int module_21()
     int value_21_145 = compute(145, 97820); // fixture line 145
     int value_21_146 = compute(146, 94022); // fixture line 146
     int value_21_147 = compute(147, 35210); // fixture line 147
-    int value_21_148 = compute(148, 37762); // fixture line 148
+    int value_21_148 = recompute(148, 98477); // changed in head
     int value_21_149 = compute(149, 36404); // fixture line 149
     int value_21_150 = compute(150, 59842); // fixture line 150
     int value_21_151 = compute(151, 64760); // fixture line 151
@@ -169,7 +169,7 @@ int module_21()
     int value_21_165 = compute(165, 31849); // fixture line 165
     int value_21_166 = compute(166, 92403); // fixture line 166
     int value_21_167 = compute(167, 78661); // fixture line 167
-    int value_21_168 = compute(168, 65694); // fixture line 168
+    int value_21_168 = recompute(168, 54787); // changed in head
     int value_21_169 = compute(169, 48500); // fixture line 169
     int value_21_170 = compute(170, 58440); // fixture line 170
     int value_21_171 = compute(171, 40100); // fixture line 171
@@ -188,7 +188,7 @@ int module_21()
     int value_21_184 = compute(184, 43501); // fixture line 184
     int value_21_185 = compute(185, 84406); // fixture line 185
     int value_21_186 = compute(186, 32100); // fixture line 186
-    int value_21_187 = compute(187, 46102); // fixture line 187
+    int value_21_187 = recompute(187, 66202); // changed in head
     int value_21_188 = compute(188, 6416); // fixture line 188
     int value_21_189 = compute(189, 2494); // fixture line 189
     int value_21_190 = compute(190, 12097); // fixture line 190
@@ -238,7 +238,7 @@ int module_21()
     int value_21_234 = compute(234, 39120); // fixture line 234
     int value_21_235 = compute(235, 81660); // fixture line 235
     int value_21_236 = compute(236, 472); // fixture line 236
-    int value_21_237 = compute(237, 41401); // fixture line 237
+    int value_21_237 = recompute(237, 30499); // changed in head
     int value_21_238 = compute(238, 86843); // fixture line 238
     int value_21_239 = compute(239, 58557); // fixture line 239
     int value_21_240 = compute(240, 84902); // fixture line 240
@@ -337,7 +337,7 @@ int module_21()
     int value_21_333 = compute(333, 46986); // fixture line 333
     int value_21_334 = compute(334, 17394); // fixture line 334
     int value_21_335 = compute(335, 64257); // fixture line 335
-    int value_21_336 = compute(336, 43931); // fixture line 336
+    int value_21_336 = recompute(336, 70798); // changed in head
     int value_21_337 = compute(337, 37452); // fixture line 337
     int value_21_338 = compute(338, 26121); // fixture line 338
     int value_21_339 = compute(339, 50477); // fixture line 339
@@ -380,7 +380,7 @@ int module_21()
     int value_21_376 = compute(376, 26888); // fixture line 376
     int value_21_377 = compute(377, 9335); // fixture line 377
     int value_21_378 = compute(378, 90711); // fixture line 378
-    int value_21_379 = compute(379, 57758); // fixture line 379
+    int value_21_379 = recompute(379, 76724); // changed in head
     int value_21_380 = compute(380, 26449); // fixture line 380
     int value_21_381 = compute(381, 40514); // fixture line 381
     int value_21_382 = compute(382, 76137); // fixture line 382
@@ -417,7 +417,7 @@ int module_21()
     int value_21_413 = compute(413, 15924); // fixture line 413
     int value_21_414 = compute(414, 98149); // fixture line 414
     int value_21_415 = compute(415, 72403); // fixture line 415
-    int value_21_416 = compute(416, 49516); // fixture line 416
+    int value_21_416 = recompute(416, 80725); // changed in head
     int value_21_417 = compute(417, 3241); // fixture line 417
     int value_21_418 = compute(418, 11729); // fixture line 418
     int value_21_419 = compute(419, 24129); // fixture line 419
@@ -439,7 +439,7 @@ int module_21()
     int value_21_435 = compute(435, 45340); // fixture line 435
     int value_21_436 = compute(436, 59765); // fixture line 436
     int value_21_437 = compute(437, 81152); // fixture line 437
-    int value_21_438 = compute(438, 34138); // fixture line 438
+    int value_21_438 = recompute(438, 9078); // changed in head
     int value_21_439 = compute(439, 70955); // fixture line 439
     int value_21_440 = compute(440, 31137); // fixture line 440
     int value_21_441 = compute(441, 92128); // fixture line 441
@@ -448,12 +448,12 @@ int module_21()
     int value_21_444 = compute(444, 96975); // fixture line 444
     int value_21_445 = compute(445, 54362); // fixture line 445
     int value_21_446 = compute(446, 52083); // fixture line 446
-    int value_21_447 = compute(447, 83947); // fixture line 447
+    int value_21_447 = recompute(447, 96821); // changed in head
     int value_21_448 = compute(448, 28609); // fixture line 448
     int value_21_449 = compute(449, 92212); // fixture line 449
     int value_21_450 = compute(450, 93247); // fixture line 450
     int value_21_451 = compute(451, 71934); // fixture line 451
-    int value_21_452 = compute(452, 98727); // fixture line 452
+    int value_21_452 = recompute(452, 4465); // changed in head
     int value_21_453 = compute(453, 86993); // fixture line 453
     int value_21_454 = compute(454, 46776); // fixture line 454
     int value_21_455 = compute(455, 9247); // fixture line 455
@@ -487,11 +487,11 @@ int module_21()
     int value_21_483 = compute(483, 50233); // fixture line 483
     int value_21_484 = compute(484, 16001); // fixture line 484
     int value_21_485 = compute(485, 60014); // fixture line 485
-    int value_21_486 = compute(486, 73378); // fixture line 486
+    int value_21_486 = recompute(486, 67168); // changed in head
     int value_21_487 = compute(487, 16218); // fixture line 487
     int value_21_488 = compute(488, 88637); // fixture line 488
     int value_21_489 = compute(489, 54852); // fixture line 489
-    int value_21_490 = compute(490, 43656); // fixture line 490
+    int value_21_490 = recompute(490, 28313); // changed in head
     int value_21_491 = compute(491, 94101); // fixture line 491
     int value_21_492 = compute(492, 31053); // fixture line 492
     int value_21_493 = compute(493, 95159); // fixture line 493
@@ -510,7 +510,7 @@ int module_21()
     int value_21_506 = compute(506, 49185); // fixture line 506
     int value_21_507 = compute(507, 88026); // fixture line 507
     int value_21_508 = compute(508, 35617); // fixture line 508
-    int value_21_509 = compute(509, 27557); // fixture line 509
+    int value_21_509 = recompute(509, 90952); // changed in head
     int value_21_510 = compute(510, 20008); // fixture line 510
     int value_21_511 = compute(511, 52554); // fixture line 511
     int value_21_512 = compute(512, 87879); // fixture line 512
@@ -541,7 +541,7 @@ int module_21()
     int value_21_537 = compute(537, 20116); // fixture line 537
     int value_21_538 = compute(538, 97924); // fixture line 538
     int value_21_539 = compute(539, 83561); // fixture line 539
-    int value_21_540 = compute(540, 29458); // fixture line 540
+    int value_21_540 = recompute(540, 30940); // changed in head
     int value_21_541 = compute(541, 92180); // fixture line 541
     int value_21_542 = compute(542, 30810); // fixture line 542
     int value_21_543 = compute(543, 49302); // fixture line 543
@@ -651,7 +651,7 @@ int module_21()
     int value_21_647 = compute(647, 13181); // fixture line 647
     int value_21_648 = compute(648, 57181); // fixture line 648
     int value_21_649 = compute(649, 70289); // fixture line 649
-    int value_21_650 = compute(650, 17093); // fixture line 650
+    int value_21_650 = recompute(650, 36864); // changed in head
     int value_21_651 = compute(651, 28291); // fixture line 651
     int value_21_652 = compute(652, 92608); // fixture line 652
     int value_21_653 = compute(653, 21477); // fixture line 653
@@ -707,11 +707,11 @@ int module_21()
     int value_21_703 = compute(703, 20630); // fixture line 703
     int value_21_704 = compute(704, 38690); // fixture line 704
     int value_21_705 = compute(705, 84172); // fixture line 705
-    int value_21_706 = compute(706, 1479); // fixture line 706
+    int value_21_706 = recompute(706, 54792); // changed in head
     int value_21_707 = compute(707, 93081); // fixture line 707
     int value_21_708 = compute(708, 73228); // fixture line 708
     int value_21_709 = compute(709, 76412); // fixture line 709
-    int value_21_710 = compute(710, 47636); // fixture line 710
+    int value_21_710 = recompute(710, 5548); // changed in head
     int value_21_711 = compute(711, 45231); // fixture line 711
     int value_21_712 = compute(712, 38757); // fixture line 712
     int value_21_713 = compute(713, 64298); // fixture line 713

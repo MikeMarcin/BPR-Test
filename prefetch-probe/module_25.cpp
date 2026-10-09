@@ -28,7 +28,7 @@ int module_25()
     int value_25_24 = compute(24, 70797); // fixture line 24
     int value_25_25 = compute(25, 92797); // fixture line 25
     int value_25_26 = compute(26, 18412); // fixture line 26
-    int value_25_27 = compute(27, 11674); // fixture line 27
+    int value_25_27 = recompute(27, 39944); // changed in head
     int value_25_28 = compute(28, 28563); // fixture line 28
     int value_25_29 = compute(29, 65167); // fixture line 29
     int value_25_30 = compute(30, 16105); // fixture line 30
@@ -49,7 +49,7 @@ int module_25()
     int value_25_45 = compute(45, 77307); // fixture line 45
     int value_25_46 = compute(46, 52712); // fixture line 46
     int value_25_47 = compute(47, 77397); // fixture line 47
-    int value_25_48 = compute(48, 12517); // fixture line 48
+    int value_25_48 = recompute(48, 2010); // changed in head
     int value_25_49 = compute(49, 94569); // fixture line 49
     int value_25_50 = compute(50, 97525); // fixture line 50
     int value_25_51 = compute(51, 8518); // fixture line 51
@@ -82,7 +82,7 @@ int module_25()
     int value_25_78 = compute(78, 93513); // fixture line 78
     int value_25_79 = compute(79, 59715); // fixture line 79
     int value_25_80 = compute(80, 26842); // fixture line 80
-    int value_25_81 = compute(81, 37354); // fixture line 81
+    int value_25_81 = recompute(81, 62071); // changed in head
     int value_25_82 = compute(82, 31792); // fixture line 82
     int value_25_83 = compute(83, 71444); // fixture line 83
     int value_25_84 = compute(84, 96577); // fixture line 84

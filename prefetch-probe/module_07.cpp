@@ -50,7 +50,7 @@ int module_7()
     int value_7_46 = compute(46, 97294); // fixture line 46
     int value_7_47 = compute(47, 24133); // fixture line 47
     int value_7_48 = compute(48, 15881); // fixture line 48
-    int value_7_49 = compute(49, 68894); // fixture line 49
+    int value_7_49 = recompute(49, 9494); // changed in head
     int value_7_50 = compute(50, 21069); // fixture line 50
     int value_7_51 = compute(51, 91454); // fixture line 51
     int value_7_52 = compute(52, 52509); // fixture line 52
@@ -60,11 +60,11 @@ int module_7()
     int value_7_56 = compute(56, 82743); // fixture line 56
     int value_7_57 = compute(57, 24545); // fixture line 57
     int value_7_58 = compute(58, 93219); // fixture line 58
-    int value_7_59 = compute(59, 91384); // fixture line 59
+    int value_7_59 = recompute(59, 66510); // changed in head
     int value_7_60 = compute(60, 30365); // fixture line 60
     int value_7_61 = compute(61, 80431); // fixture line 61
     int value_7_62 = compute(62, 68400); // fixture line 62
-    int value_7_63 = compute(63, 2182); // fixture line 63
+    int value_7_63 = recompute(63, 75642); // changed in head
     int value_7_64 = compute(64, 54030); // fixture line 64
     int value_7_65 = compute(65, 34183); // fixture line 65
     int value_7_66 = compute(66, 45050); // fixture line 66
@@ -89,7 +89,7 @@ int module_7()
     int value_7_85 = compute(85, 80317); // fixture line 85
     int value_7_86 = compute(86, 11523); // fixture line 86
     int value_7_87 = compute(87, 1563); // fixture line 87
-    int value_7_88 = compute(88, 68833); // fixture line 88
+    int value_7_88 = recompute(88, 56838); // changed in head
     int value_7_89 = compute(89, 29349); // fixture line 89
     int value_7_90 = compute(90, 49306); // fixture line 90
     int value_7_91 = compute(91, 36373); // fixture line 91
@@ -97,7 +97,7 @@ int module_7()
     int value_7_93 = compute(93, 79486); // fixture line 93
     int value_7_94 = compute(94, 89406); // fixture line 94
     int value_7_95 = compute(95, 68524); // fixture line 95
-    int value_7_96 = compute(96, 60212); // fixture line 96
+    int value_7_96 = recompute(96, 47931); // changed in head
     int value_7_97 = compute(97, 56600); // fixture line 97
     int value_7_98 = compute(98, 74823); // fixture line 98
     int value_7_99 = compute(99, 6944); // fixture line 99
@@ -127,7 +127,7 @@ int module_7()
     int value_7_123 = compute(123, 3959); // fixture line 123
     int value_7_124 = compute(124, 82265); // fixture line 124
     int value_7_125 = compute(125, 82401); // fixture line 125
-    int value_7_126 = compute(126, 6798); // fixture line 126
+    int value_7_126 = recompute(126, 29260); // changed in head
     int value_7_127 = compute(127, 75309); // fixture line 127
     int value_7_128 = compute(128, 73025); // fixture line 128
     int value_7_129 = compute(129, 82702); // fixture line 129
@@ -220,7 +220,7 @@ int module_7()
     int value_7_216 = compute(216, 6806); // fixture line 216
     int value_7_217 = compute(217, 98382); // fixture line 217
     int value_7_218 = compute(218, 8437); // fixture line 218
-    int value_7_219 = compute(219, 14220); // fixture line 219
+    int value_7_219 = recompute(219, 4914); // changed in head
     int value_7_220 = compute(220, 22117); // fixture line 220
     int value_7_221 = compute(221, 80309); // fixture line 221
     int value_7_222 = compute(222, 588); // fixture line 222
@@ -247,7 +247,7 @@ int module_7()
     int value_7_243 = compute(243, 6986); // fixture line 243
     int value_7_244 = compute(244, 27940); // fixture line 244
     int value_7_245 = compute(245, 10152); // fixture line 245
-    int value_7_246 = compute(246, 11743); // fixture line 246
+    int value_7_246 = recompute(246, 11889); // changed in head
     int value_7_247 = compute(247, 4117); // fixture line 247
     int value_7_248 = compute(248, 30286); // fixture line 248
     int value_7_249 = compute(249, 48528); // fixture line 249
@@ -332,7 +332,7 @@ int module_7()
     int value_7_328 = compute(328, 40757); // fixture line 328
     int value_7_329 = compute(329, 3829); // fixture line 329
     int value_7_330 = compute(330, 69621); // fixture line 330
-    int value_7_331 = compute(331, 45537); // fixture line 331
+    int value_7_331 = recompute(331, 19772); // changed in head
     int value_7_332 = compute(332, 29667); // fixture line 332
     int value_7_333 = compute(333, 68541); // fixture line 333
     int value_7_334 = compute(334, 1670); // fixture line 334
@@ -405,9 +405,9 @@ int module_7()
     int value_7_401 = compute(401, 34860); // fixture line 401
     int value_7_402 = compute(402, 54931); // fixture line 402
     int value_7_403 = compute(403, 55104); // fixture line 403
-    int value_7_404 = compute(404, 11); // fixture line 404
+    int value_7_404 = recompute(404, 85319); // changed in head
     int value_7_405 = compute(405, 18520); // fixture line 405
-    int value_7_406 = compute(406, 89581); // fixture line 406
+    int value_7_406 = recompute(406, 6499); // changed in head
     int value_7_407 = compute(407, 80503); // fixture line 407
     int value_7_408 = compute(408, 78212); // fixture line 408
     int value_7_409 = compute(409, 2478); // fixture line 409
@@ -429,13 +429,13 @@ int module_7()
     int value_7_425 = compute(425, 17243); // fixture line 425
     int value_7_426 = compute(426, 13187); // fixture line 426
     int value_7_427 = compute(427, 10882); // fixture line 427
-    int value_7_428 = compute(428, 61948); // fixture line 428
+    int value_7_428 = recompute(428, 9156); // changed in head
     int value_7_429 = compute(429, 30224); // fixture line 429
     int value_7_430 = compute(430, 15537); // fixture line 430
     int value_7_431 = compute(431, 23658); // fixture line 431
     int value_7_432 = compute(432, 24631); // fixture line 432
     int value_7_433 = compute(433, 77162); // fixture line 433
-    int value_7_434 = compute(434, 15955); // fixture line 434
+    int value_7_434 = recompute(434, 7747); // changed in head
     int value_7_435 = compute(435, 89187); // fixture line 435
     int value_7_436 = compute(436, 10128); // fixture line 436
     int value_7_437 = compute(437, 49622); // fixture line 437

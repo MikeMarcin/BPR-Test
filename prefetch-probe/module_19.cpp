@@ -76,7 +76,7 @@ int module_19()
     int value_19_72 = compute(72, 58672); // fixture line 72
     int value_19_73 = compute(73, 12623); // fixture line 73
     int value_19_74 = compute(74, 38250); // fixture line 74
-    int value_19_75 = compute(75, 2597); // fixture line 75
+    int value_19_75 = recompute(75, 12909); // changed in head
     int value_19_76 = compute(76, 42221); // fixture line 76
     int value_19_77 = compute(77, 53090); // fixture line 77
     int value_19_78 = compute(78, 98015); // fixture line 78
@@ -102,7 +102,7 @@ int module_19()
     int value_19_98 = compute(98, 84273); // fixture line 98
     int value_19_99 = compute(99, 37022); // fixture line 99
     int value_19_100 = compute(100, 53698); // fixture line 100
-    int value_19_101 = compute(101, 68580); // fixture line 101
+    int value_19_101 = recompute(101, 75903); // changed in head
     int value_19_102 = compute(102, 79914); // fixture line 102
     int value_19_103 = compute(103, 62972); // fixture line 103
     int value_19_104 = compute(104, 54800); // fixture line 104
@@ -111,7 +111,7 @@ int module_19()
     int value_19_107 = compute(107, 75860); // fixture line 107
     int value_19_108 = compute(108, 73661); // fixture line 108
     int value_19_109 = compute(109, 42672); // fixture line 109
-    int value_19_110 = compute(110, 4221); // fixture line 110
+    int value_19_110 = recompute(110, 42663); // changed in head
     int value_19_111 = compute(111, 91379); // fixture line 111
     int value_19_112 = compute(112, 33468); // fixture line 112
     int value_19_113 = compute(113, 75101); // fixture line 113
@@ -124,7 +124,7 @@ int module_19()
     int value_19_120 = compute(120, 71280); // fixture line 120
     int value_19_121 = compute(121, 24215); // fixture line 121
     int value_19_122 = compute(122, 50508); // fixture line 122
-    int value_19_123 = compute(123, 45534); // fixture line 123
+    int value_19_123 = recompute(123, 67042); // changed in head
     int value_19_124 = compute(124, 32534); // fixture line 124
     int value_19_125 = compute(125, 85623); // fixture line 125
     int value_19_126 = compute(126, 56431); // fixture line 126
@@ -152,7 +152,7 @@ int module_19()
     int value_19_148 = compute(148, 88809); // fixture line 148
     int value_19_149 = compute(149, 92475); // fixture line 149
     int value_19_150 = compute(150, 17264); // fixture line 150
-    int value_19_151 = compute(151, 42643); // fixture line 151
+    int value_19_151 = recompute(151, 77987); // changed in head
     int value_19_152 = compute(152, 60039); // fixture line 152
     int value_19_153 = compute(153, 24976); // fixture line 153
     int value_19_154 = compute(154, 26563); // fixture line 154
@@ -205,10 +205,10 @@ int module_19()
     int value_19_201 = compute(201, 84496); // fixture line 201
     int value_19_202 = compute(202, 34302); // fixture line 202
     int value_19_203 = compute(203, 44849); // fixture line 203
-    int value_19_204 = compute(204, 50036); // fixture line 204
+    int value_19_204 = recompute(204, 51581); // changed in head
     int value_19_205 = compute(205, 87817); // fixture line 205
-    int value_19_206 = compute(206, 87817); // fixture line 206
-    int value_19_207 = compute(207, 93424); // fixture line 207
+    int value_19_206 = recompute(206, 9278); // changed in head
+    int value_19_207 = recompute(207, 14927); // changed in head
     int value_19_208 = compute(208, 73583); // fixture line 208
     int value_19_209 = compute(209, 9298); // fixture line 209
     int value_19_210 = compute(210, 90496); // fixture line 210
@@ -267,8 +267,8 @@ int module_19()
     int value_19_263 = compute(263, 96028); // fixture line 263
     int value_19_264 = compute(264, 49367); // fixture line 264
     int value_19_265 = compute(265, 51426); // fixture line 265
-    int value_19_266 = compute(266, 34993); // fixture line 266
-    int value_19_267 = compute(267, 72029); // fixture line 267
+    int value_19_266 = recompute(266, 53984); // changed in head
+    int value_19_267 = recompute(267, 14112); // changed in head
     int value_19_268 = compute(268, 15209); // fixture line 268
     int value_19_269 = compute(269, 84700); // fixture line 269
     int value_19_270 = compute(270, 90140); // fixture line 270
@@ -297,7 +297,7 @@ int module_19()
     int value_19_293 = compute(293, 71307); // fixture line 293
     int value_19_294 = compute(294, 70647); // fixture line 294
     int value_19_295 = compute(295, 79161); // fixture line 295
-    int value_19_296 = compute(296, 51447); // fixture line 296
+    int value_19_296 = recompute(296, 76638); // changed in head
     int value_19_297 = compute(297, 87267); // fixture line 297
     int value_19_298 = compute(298, 55030); // fixture line 298
     int value_19_299 = compute(299, 25385); // fixture line 299
@@ -319,7 +319,7 @@ int module_19()
     int value_19_315 = compute(315, 96293); // fixture line 315
     int value_19_316 = compute(316, 17047); // fixture line 316
     int value_19_317 = compute(317, 20216); // fixture line 317
-    int value_19_318 = compute(318, 26354); // fixture line 318
+    int value_19_318 = recompute(318, 2996); // changed in head
     int value_19_319 = compute(319, 1723); // fixture line 319
     int value_19_320 = compute(320, 48738); // fixture line 320
     int value_19_321 = compute(321, 31539); // fixture line 321
@@ -336,7 +336,7 @@ int module_19()
     int value_19_332 = compute(332, 71208); // fixture line 332
     int value_19_333 = compute(333, 65291); // fixture line 333
     int value_19_334 = compute(334, 62272); // fixture line 334
-    int value_19_335 = compute(335, 52698); // fixture line 335
+    int value_19_335 = recompute(335, 35115); // changed in head
     int value_19_336 = compute(336, 27366); // fixture line 336
     int value_19_337 = compute(337, 97534); // fixture line 337
     int value_19_338 = compute(338, 99663); // fixture line 338
@@ -356,7 +356,7 @@ int module_19()
     int value_19_352 = compute(352, 31564); // fixture line 352
     int value_19_353 = compute(353, 9718); // fixture line 353
     int value_19_354 = compute(354, 58688); // fixture line 354
-    int value_19_355 = compute(355, 98635); // fixture line 355
+    int value_19_355 = recompute(355, 69363); // changed in head
     int value_19_356 = compute(356, 1571); // fixture line 356
     int value_19_357 = compute(357, 12922); // fixture line 357
     int value_19_358 = compute(358, 37162); // fixture line 358
@@ -398,7 +398,7 @@ int module_19()
     int value_19_394 = compute(394, 67287); // fixture line 394
     int value_19_395 = compute(395, 36668); // fixture line 395
     int value_19_396 = compute(396, 81530); // fixture line 396
-    int value_19_397 = compute(397, 1389); // fixture line 397
+    int value_19_397 = recompute(397, 96137); // changed in head
     int value_19_398 = compute(398, 98298); // fixture line 398
     int value_19_399 = compute(399, 88119); // fixture line 399
     int value_19_400 = compute(400, 40379); // fixture line 400
@@ -425,7 +425,7 @@ int module_19()
     int value_19_421 = compute(421, 29643); // fixture line 421
     int value_19_422 = compute(422, 51047); // fixture line 422
     int value_19_423 = compute(423, 93645); // fixture line 423
-    int value_19_424 = compute(424, 71379); // fixture line 424
+    int value_19_424 = recompute(424, 2202); // changed in head
     int value_19_425 = compute(425, 41544); // fixture line 425
     int value_19_426 = compute(426, 28854); // fixture line 426
     int value_19_427 = compute(427, 32948); // fixture line 427
@@ -556,7 +556,7 @@ int module_19()
     int value_19_552 = compute(552, 33103); // fixture line 552
     int value_19_553 = compute(553, 10038); // fixture line 553
     int value_19_554 = compute(554, 64696); // fixture line 554
-    int value_19_555 = compute(555, 80915); // fixture line 555
+    int value_19_555 = recompute(555, 59717); // changed in head
     int value_19_556 = compute(556, 66646); // fixture line 556
     int value_19_557 = compute(557, 24545); // fixture line 557
     int value_19_558 = compute(558, 47059); // fixture line 558
@@ -583,7 +583,7 @@ int module_19()
     int value_19_579 = compute(579, 7624); // fixture line 579
     int value_19_580 = compute(580, 12738); // fixture line 580
     int value_19_581 = compute(581, 32388); // fixture line 581
-    int value_19_582 = compute(582, 8890); // fixture line 582
+    int value_19_582 = recompute(582, 80950); // changed in head
     int value_19_583 = compute(583, 15969); // fixture line 583
     int value_19_584 = compute(584, 38723); // fixture line 584
     int value_19_585 = compute(585, 1746); // fixture line 585
@@ -694,7 +694,7 @@ int module_19()
     int value_19_690 = compute(690, 20238); // fixture line 690
     int value_19_691 = compute(691, 39249); // fixture line 691
     int value_19_692 = compute(692, 29738); // fixture line 692
-    int value_19_693 = compute(693, 72752); // fixture line 693
+    int value_19_693 = recompute(693, 5669); // changed in head
     int value_19_694 = compute(694, 62755); // fixture line 694
     int value_19_695 = compute(695, 70392); // fixture line 695
     int value_19_696 = compute(696, 36670); // fixture line 696
@@ -804,7 +804,7 @@ int module_19()
     int value_19_800 = compute(800, 42499); // fixture line 800
     int value_19_801 = compute(801, 47075); // fixture line 801
     int value_19_802 = compute(802, 12224); // fixture line 802
-    int value_19_803 = compute(803, 8082); // fixture line 803
+    int value_19_803 = recompute(803, 68218); // changed in head
     int value_19_804 = compute(804, 18760); // fixture line 804
     int value_19_805 = compute(805, 43136); // fixture line 805
     int value_19_806 = compute(806, 40141); // fixture line 806

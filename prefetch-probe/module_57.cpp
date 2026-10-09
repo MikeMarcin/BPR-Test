@@ -5,13 +5,13 @@ int module_57()
     int value_57_1 = compute(1, 88748); // fixture line 1
     int value_57_2 = compute(2, 488); // fixture line 2
     int value_57_3 = compute(3, 69764); // fixture line 3
-    int value_57_4 = compute(4, 1999); // fixture line 4
+    int value_57_4 = recompute(4, 29472); // changed in head
     int value_57_5 = compute(5, 33303); // fixture line 5
     int value_57_6 = compute(6, 75951); // fixture line 6
     int value_57_7 = compute(7, 80802); // fixture line 7
     int value_57_8 = compute(8, 33157); // fixture line 8
     int value_57_9 = compute(9, 86105); // fixture line 9
-    int value_57_10 = compute(10, 37301); // fixture line 10
+    int value_57_10 = recompute(10, 48202); // changed in head
     int value_57_11 = compute(11, 34562); // fixture line 11
     int value_57_12 = compute(12, 79656); // fixture line 12
     int value_57_13 = compute(13, 52272); // fixture line 13
@@ -132,7 +132,7 @@ int module_57()
     int value_57_128 = compute(128, 12693); // fixture line 128
     int value_57_129 = compute(129, 65264); // fixture line 129
     int value_57_130 = compute(130, 83496); // fixture line 130
-    int value_57_131 = compute(131, 18389); // fixture line 131
+    int value_57_131 = recompute(131, 42102); // changed in head
     int value_57_132 = compute(132, 89091); // fixture line 132
     int value_57_133 = compute(133, 55066); // fixture line 133
     int value_57_134 = compute(134, 46286); // fixture line 134
@@ -151,7 +151,7 @@ int module_57()
     int value_57_147 = compute(147, 19596); // fixture line 147
     int value_57_148 = compute(148, 39078); // fixture line 148
     int value_57_149 = compute(149, 75592); // fixture line 149
-    int value_57_150 = compute(150, 51728); // fixture line 150
+    int value_57_150 = recompute(150, 79337); // changed in head
     int value_57_151 = compute(151, 20095); // fixture line 151
     int value_57_152 = compute(152, 56891); // fixture line 152
     int value_57_153 = compute(153, 46457); // fixture line 153
