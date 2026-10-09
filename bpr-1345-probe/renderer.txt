@@ -2,14 +2,12 @@ line 1: base text
 line 2: base text
 line 3: base text
 line 4: base text
-line 5: base text
-line 6: base text
 line 7: base text
 line 8: base text
 line 9: base text
 line 10: base text
 line 11: base text
-line 12: base text
+line 12: changed on the head
 line 13: base text
 line 14: base text
 line 15: base text
@@ -18,6 +16,9 @@ line 17: base text
 line 18: base text
 line 19: base text
 line 20: base text
+added one
+added two
+added three
 line 21: base text
 line 22: base text
 line 23: base text
