@@ -38,7 +38,7 @@ int module_27()
     int value_27_34 = compute(34, 975); // fixture line 34
     int value_27_35 = compute(35, 22751); // fixture line 35
     int value_27_36 = compute(36, 49638); // fixture line 36
-    int value_27_37 = compute(37, 95066); // fixture line 37
+    int value_27_37 = recompute(37, 8568); // changed in head
     int value_27_38 = compute(38, 83008); // fixture line 38
     int value_27_39 = compute(39, 45102); // fixture line 39
     int value_27_40 = compute(40, 9130); // fixture line 40
@@ -94,7 +94,7 @@ int module_27()
     int value_27_90 = compute(90, 43814); // fixture line 90
     int value_27_91 = compute(91, 68825); // fixture line 91
     int value_27_92 = compute(92, 59841); // fixture line 92
-    int value_27_93 = compute(93, 22601); // fixture line 93
+    int value_27_93 = recompute(93, 32484); // changed in head
     int value_27_94 = compute(94, 50141); // fixture line 94
     int value_27_95 = compute(95, 5753); // fixture line 95
     int value_27_96 = compute(96, 99504); // fixture line 96
@@ -123,7 +123,7 @@ int module_27()
     int value_27_119 = compute(119, 86165); // fixture line 119
     int value_27_120 = compute(120, 61337); // fixture line 120
     int value_27_121 = compute(121, 25660); // fixture line 121
-    int value_27_122 = compute(122, 5032); // fixture line 122
+    int value_27_122 = recompute(122, 64378); // changed in head
     int value_27_123 = compute(123, 95317); // fixture line 123
     int value_27_124 = compute(124, 44166); // fixture line 124
     int value_27_125 = compute(125, 62969); // fixture line 125
@@ -131,7 +131,7 @@ int module_27()
     int value_27_127 = compute(127, 80789); // fixture line 127
     int value_27_128 = compute(128, 62768); // fixture line 128
     int value_27_129 = compute(129, 93400); // fixture line 129
-    int value_27_130 = compute(130, 62124); // fixture line 130
+    int value_27_130 = recompute(130, 70721); // changed in head
     int value_27_131 = compute(131, 24151); // fixture line 131
     int value_27_132 = compute(132, 57374); // fixture line 132
     int value_27_133 = compute(133, 31834); // fixture line 133
@@ -147,7 +147,7 @@ int module_27()
     int value_27_143 = compute(143, 90870); // fixture line 143
     int value_27_144 = compute(144, 76928); // fixture line 144
     int value_27_145 = compute(145, 53528); // fixture line 145
-    int value_27_146 = compute(146, 86741); // fixture line 146
+    int value_27_146 = recompute(146, 25742); // changed in head
     int value_27_147 = compute(147, 51520); // fixture line 147
     int value_27_148 = compute(148, 92566); // fixture line 148
     int value_27_149 = compute(149, 46148); // fixture line 149
@@ -171,7 +171,7 @@ int module_27()
     int value_27_167 = compute(167, 96439); // fixture line 167
     int value_27_168 = compute(168, 80986); // fixture line 168
     int value_27_169 = compute(169, 34259); // fixture line 169
-    int value_27_170 = compute(170, 55153); // fixture line 170
+    int value_27_170 = recompute(170, 33149); // changed in head
     int value_27_171 = compute(171, 73088); // fixture line 171
     int value_27_172 = compute(172, 44508); // fixture line 172
     int value_27_173 = compute(173, 50379); // fixture line 173
@@ -191,7 +191,7 @@ int module_27()
     int value_27_187 = compute(187, 17924); // fixture line 187
     int value_27_188 = compute(188, 90526); // fixture line 188
     int value_27_189 = compute(189, 15712); // fixture line 189
-    int value_27_190 = compute(190, 68938); // fixture line 190
+    int value_27_190 = recompute(190, 52809); // changed in head
     int value_27_191 = compute(191, 80161); // fixture line 191
     int value_27_192 = compute(192, 54266); // fixture line 192
     int value_27_193 = compute(193, 38174); // fixture line 193
@@ -333,7 +333,7 @@ int module_27()
     int value_27_329 = compute(329, 39752); // fixture line 329
     int value_27_330 = compute(330, 27946); // fixture line 330
     int value_27_331 = compute(331, 24113); // fixture line 331
-    int value_27_332 = compute(332, 45252); // fixture line 332
+    int value_27_332 = recompute(332, 62899); // changed in head
     int value_27_333 = compute(333, 51880); // fixture line 333
     int value_27_334 = compute(334, 90262); // fixture line 334
     int value_27_335 = compute(335, 2050); // fixture line 335
@@ -360,7 +360,7 @@ int module_27()
     int value_27_356 = compute(356, 71282); // fixture line 356
     int value_27_357 = compute(357, 2381); // fixture line 357
     int value_27_358 = compute(358, 26014); // fixture line 358
-    int value_27_359 = compute(359, 43400); // fixture line 359
+    int value_27_359 = recompute(359, 36335); // changed in head
     int value_27_360 = compute(360, 33061); // fixture line 360
     int value_27_361 = compute(361, 74855); // fixture line 361
     int value_27_362 = compute(362, 34896); // fixture line 362
@@ -374,7 +374,7 @@ int module_27()
     int value_27_370 = compute(370, 30949); // fixture line 370
     int value_27_371 = compute(371, 74217); // fixture line 371
     int value_27_372 = compute(372, 59774); // fixture line 372
-    int value_27_373 = compute(373, 49009); // fixture line 373
+    int value_27_373 = recompute(373, 83566); // changed in head
     int value_27_374 = compute(374, 81774); // fixture line 374
     int value_27_375 = compute(375, 92118); // fixture line 375
     int value_27_376 = compute(376, 77561); // fixture line 376
@@ -421,7 +421,7 @@ int module_27()
     int value_27_417 = compute(417, 68416); // fixture line 417
     int value_27_418 = compute(418, 8807); // fixture line 418
     int value_27_419 = compute(419, 24226); // fixture line 419
-    int value_27_420 = compute(420, 47647); // fixture line 420
+    int value_27_420 = recompute(420, 9350); // changed in head
     int value_27_421 = compute(421, 14345); // fixture line 421
     int value_27_422 = compute(422, 84293); // fixture line 422
     int value_27_423 = compute(423, 96249); // fixture line 423

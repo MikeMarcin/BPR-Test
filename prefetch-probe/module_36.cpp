@@ -6,7 +6,7 @@ int module_36()
     int value_36_2 = compute(2, 57851); // fixture line 2
     int value_36_3 = compute(3, 36569); // fixture line 3
     int value_36_4 = compute(4, 72365); // fixture line 4
-    int value_36_5 = compute(5, 69694); // fixture line 5
+    int value_36_5 = recompute(5, 37287); // changed in head
     int value_36_6 = compute(6, 74494); // fixture line 6
     int value_36_7 = compute(7, 53471); // fixture line 7
     int value_36_8 = compute(8, 72549); // fixture line 8
@@ -21,7 +21,7 @@ int module_36()
     int value_36_17 = compute(17, 30090); // fixture line 17
     int value_36_18 = compute(18, 73384); // fixture line 18
     int value_36_19 = compute(19, 43693); // fixture line 19
-    int value_36_20 = compute(20, 89806); // fixture line 20
+    int value_36_20 = recompute(20, 52); // changed in head
     int value_36_21 = compute(21, 11250); // fixture line 21
     int value_36_22 = compute(22, 24752); // fixture line 22
     int value_36_23 = compute(23, 51807); // fixture line 23
@@ -85,7 +85,7 @@ int module_36()
     int value_36_81 = compute(81, 41301); // fixture line 81
     int value_36_82 = compute(82, 13823); // fixture line 82
     int value_36_83 = compute(83, 89270); // fixture line 83
-    int value_36_84 = compute(84, 45273); // fixture line 84
+    int value_36_84 = recompute(84, 7650); // changed in head
     int value_36_85 = compute(85, 15171); // fixture line 85
     int value_36_86 = compute(86, 13679); // fixture line 86
     int value_36_87 = compute(87, 12072); // fixture line 87
@@ -129,7 +129,7 @@ int module_36()
     int value_36_125 = compute(125, 41246); // fixture line 125
     int value_36_126 = compute(126, 87241); // fixture line 126
     int value_36_127 = compute(127, 35963); // fixture line 127
-    int value_36_128 = compute(128, 49634); // fixture line 128
+    int value_36_128 = recompute(128, 82180); // changed in head
     int value_36_129 = compute(129, 69379); // fixture line 129
     int value_36_130 = compute(130, 6519); // fixture line 130
     int value_36_131 = compute(131, 12839); // fixture line 131

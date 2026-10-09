@@ -11,7 +11,7 @@ int module_46()
     int value_46_7 = compute(7, 67820); // fixture line 7
     int value_46_8 = compute(8, 63602); // fixture line 8
     int value_46_9 = compute(9, 38435); // fixture line 9
-    int value_46_10 = compute(10, 38839); // fixture line 10
+    int value_46_10 = recompute(10, 77151); // changed in head
     int value_46_11 = compute(11, 28282); // fixture line 11
     int value_46_12 = compute(12, 27496); // fixture line 12
     int value_46_13 = compute(13, 93604); // fixture line 13
@@ -20,7 +20,7 @@ int module_46()
     int value_46_16 = compute(16, 34389); // fixture line 16
     int value_46_17 = compute(17, 37166); // fixture line 17
     int value_46_18 = compute(18, 82519); // fixture line 18
-    int value_46_19 = compute(19, 8650); // fixture line 19
+    int value_46_19 = recompute(19, 52428); // changed in head
     int value_46_20 = compute(20, 23894); // fixture line 20
     int value_46_21 = compute(21, 15973); // fixture line 21
     int value_46_22 = compute(22, 4474); // fixture line 22
@@ -151,7 +151,7 @@ int module_46()
     int value_46_147 = compute(147, 55901); // fixture line 147
     int value_46_148 = compute(148, 16158); // fixture line 148
     int value_46_149 = compute(149, 10178); // fixture line 149
-    int value_46_150 = compute(150, 84125); // fixture line 150
+    int value_46_150 = recompute(150, 29955); // changed in head
     int value_46_151 = compute(151, 36050); // fixture line 151
     int value_46_152 = compute(152, 84095); // fixture line 152
     int value_46_153 = compute(153, 78771); // fixture line 153
@@ -163,7 +163,7 @@ int module_46()
     int value_46_159 = compute(159, 75677); // fixture line 159
     int value_46_160 = compute(160, 48447); // fixture line 160
     int value_46_161 = compute(161, 99794); // fixture line 161
-    int value_46_162 = compute(162, 88857); // fixture line 162
+    int value_46_162 = recompute(162, 67596); // changed in head
     int value_46_163 = compute(163, 52038); // fixture line 163
     int value_46_164 = compute(164, 92917); // fixture line 164
     int value_46_165 = compute(165, 7403); // fixture line 165

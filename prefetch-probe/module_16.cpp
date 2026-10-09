@@ -93,7 +93,7 @@ int module_16()
     int value_16_89 = compute(89, 19849); // fixture line 89
     int value_16_90 = compute(90, 65756); // fixture line 90
     int value_16_91 = compute(91, 39630); // fixture line 91
-    int value_16_92 = compute(92, 88584); // fixture line 92
+    int value_16_92 = recompute(92, 61501); // changed in head
     int value_16_93 = compute(93, 49697); // fixture line 93
     int value_16_94 = compute(94, 37844); // fixture line 94
     int value_16_95 = compute(95, 57613); // fixture line 95
@@ -105,9 +105,9 @@ int module_16()
     int value_16_101 = compute(101, 64981); // fixture line 101
     int value_16_102 = compute(102, 39076); // fixture line 102
     int value_16_103 = compute(103, 84531); // fixture line 103
-    int value_16_104 = compute(104, 57931); // fixture line 104
+    int value_16_104 = recompute(104, 86206); // changed in head
     int value_16_105 = compute(105, 39191); // fixture line 105
-    int value_16_106 = compute(106, 49400); // fixture line 106
+    int value_16_106 = recompute(106, 29706); // changed in head
     int value_16_107 = compute(107, 20284); // fixture line 107
     int value_16_108 = compute(108, 54205); // fixture line 108
     int value_16_109 = compute(109, 28892); // fixture line 109
@@ -115,7 +115,7 @@ int module_16()
     int value_16_111 = compute(111, 88634); // fixture line 111
     int value_16_112 = compute(112, 4719); // fixture line 112
     int value_16_113 = compute(113, 21827); // fixture line 113
-    int value_16_114 = compute(114, 43486); // fixture line 114
+    int value_16_114 = recompute(114, 767); // changed in head
     int value_16_115 = compute(115, 13540); // fixture line 115
     int value_16_116 = compute(116, 74742); // fixture line 116
     int value_16_117 = compute(117, 62403); // fixture line 117
@@ -124,7 +124,7 @@ int module_16()
     int value_16_120 = compute(120, 4577); // fixture line 120
     int value_16_121 = compute(121, 35156); // fixture line 121
     int value_16_122 = compute(122, 29267); // fixture line 122
-    int value_16_123 = compute(123, 79932); // fixture line 123
+    int value_16_123 = recompute(123, 37346); // changed in head
     int value_16_124 = compute(124, 91776); // fixture line 124
     int value_16_125 = compute(125, 63330); // fixture line 125
     int value_16_126 = compute(126, 4090); // fixture line 126

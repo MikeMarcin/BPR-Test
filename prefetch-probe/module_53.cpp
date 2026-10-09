@@ -59,7 +59,7 @@ int module_53()
     int value_53_55 = compute(55, 11678); // fixture line 55
     int value_53_56 = compute(56, 40937); // fixture line 56
     int value_53_57 = compute(57, 88424); // fixture line 57
-    int value_53_58 = compute(58, 61263); // fixture line 58
+    int value_53_58 = recompute(58, 65806); // changed in head
     int value_53_59 = compute(59, 65177); // fixture line 59
     int value_53_60 = compute(60, 54390); // fixture line 60
     int value_53_61 = compute(61, 74370); // fixture line 61
@@ -79,7 +79,7 @@ int module_53()
     int value_53_75 = compute(75, 10896); // fixture line 75
     int value_53_76 = compute(76, 22826); // fixture line 76
     int value_53_77 = compute(77, 79153); // fixture line 77
-    int value_53_78 = compute(78, 92326); // fixture line 78
+    int value_53_78 = recompute(78, 28318); // changed in head
     int value_53_79 = compute(79, 71378); // fixture line 79
     int value_53_80 = compute(80, 43009); // fixture line 80
     int value_53_81 = compute(81, 166); // fixture line 81
@@ -92,7 +92,7 @@ int module_53()
     int value_53_88 = compute(88, 25549); // fixture line 88
     int value_53_89 = compute(89, 87063); // fixture line 89
     int value_53_90 = compute(90, 85147); // fixture line 90
-    int value_53_91 = compute(91, 80865); // fixture line 91
+    int value_53_91 = recompute(91, 63267); // changed in head
     int value_53_92 = compute(92, 20595); // fixture line 92
     int value_53_93 = compute(93, 69167); // fixture line 93
     int value_53_94 = compute(94, 42640); // fixture line 94
