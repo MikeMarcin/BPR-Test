@@ -1,0 +1,3 @@
+BPR-0143 mixed-client fixture, line 1.
+Line 2.
+Line 3.
