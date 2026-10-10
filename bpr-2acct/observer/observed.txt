@@ -1,0 +1,3 @@
+BPR-0169 observer check (synthetic, disposable).
+This file exists so an observer path rule has a path to match.
+Line three.
