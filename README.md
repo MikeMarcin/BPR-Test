@@ -1,0 +1,1 @@
+Diff-engine evaluation corpus for BetterPullReview RFC-BPR-0082. The base branch holds each comparison's left side, the head branch its right side. Files under corpus/git-* come from Git 2.39.5 and 2.56.0 and are GPL-2.0 (see COPYING); the rest are generated.
