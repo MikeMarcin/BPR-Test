@@ -1,6 +1,4 @@
-left only opening line
-    {
-        value += step;
+right only opening line
         check(value);
     }
 
@@ -11999,4 +11997,6 @@ left only opening line
         check(value);
     }
 
-left only closing line
+    {
+        value += step;
+right only closing line

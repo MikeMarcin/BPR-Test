@@ -7,6 +7,13 @@ export GIT_TEST_DEFAULT_INITIAL_BRANCH_NAME
 
 . ./test-lib.sh
 . "$TEST_DIRECTORY"/lib-httpd.sh
+
+if ! test_have_prereq PERL_TEST_HELPERS
+then
+	skip_all='skipping http fetch smart tests; Perl not available'
+	test_done
+fi
+
 test "$HTTP_PROTO" = "HTTP/2" && enable_http2
 start_httpd
 
@@ -157,8 +164,8 @@ test_expect_success 'fetch changes via http' '
 
 test_expect_success 'used upload-pack service' '
 	strip_access_log >log &&
-	grep "GET  /smart/repo.git/info/refs?service=git-upload-pack HTTP/[0-9.]* 200" log &&
-	grep "POST /smart/repo.git/git-upload-pack HTTP/[0-9.]* 200" log
+	test_grep "GET  /smart/repo.git/info/refs?service=git-upload-pack HTTP/[0-9.]* 200" log &&
+	test_grep "POST /smart/repo.git/git-upload-pack HTTP/[0-9.]* 200" log
 '
 
 test_expect_success 'follow redirects (301)' '
@@ -181,9 +188,31 @@ test_expect_success 'clone from password-protected repository' '
 	echo two >expect &&
 	set_askpass user@host pass@host &&
 	git clone --bare "$HTTPD_URL/auth/smart/repo.git" smart-auth &&
-	expect_askpass both user@host &&
+	expect_askpass both user%40host &&
 	git --git-dir=smart-auth log -1 --format=%s >actual &&
 	test_cmp expect actual
+'
+
+test_expect_success 'credential.interactive=false skips askpass' '
+	set_askpass bogus nonsense &&
+	(
+		GIT_TRACE2_EVENT="$(pwd)/interactive-true" &&
+		export GIT_TRACE2_EVENT &&
+		test_must_fail git clone --bare "$HTTPD_URL/auth/smart/repo.git" interactive-true-dir &&
+		test_region credential interactive interactive-true &&
+
+		GIT_TRACE2_EVENT="$(pwd)/interactive-false" &&
+		export GIT_TRACE2_EVENT &&
+		test_must_fail git -c credential.interactive=false \
+			clone --bare "$HTTPD_URL/auth/smart/repo.git" interactive-false-dir &&
+		test_region ! credential interactive interactive-false &&
+
+		GIT_TRACE2_EVENT="$(pwd)/interactive-never" &&
+		export GIT_TRACE2_EVENT &&
+		test_must_fail git -c credential.interactive=never \
+			clone --bare "$HTTPD_URL/auth/smart/repo.git" interactive-never-dir &&
+		test_region ! credential interactive interactive-never
+	)
 '
 
 test_expect_success 'clone from auth-only-for-push repository' '
@@ -199,7 +228,7 @@ test_expect_success 'clone from auth-only-for-objects repository' '
 	echo two >expect &&
 	set_askpass user@host pass@host &&
 	git clone --bare "$HTTPD_URL/auth-fetch/smart/repo.git" half-auth &&
-	expect_askpass both user@host &&
+	expect_askpass both user%40host &&
 	git --git-dir=half-auth log -1 --format=%s >actual &&
 	test_cmp expect actual
 '
@@ -224,31 +253,31 @@ test_expect_success 'redirects send auth to new location' '
 	set_askpass user@host pass@host &&
 	git -c credential.useHttpPath=true \
 	  clone $HTTPD_URL/smart-redir-auth/repo.git repo-redir-auth &&
-	expect_askpass both user@host auth/smart/repo.git
+	expect_askpass both user%40host auth/smart/repo.git
 '
 
 test_expect_success 'GIT_TRACE_CURL redacts auth details' '
 	rm -rf redact-auth trace &&
 	set_askpass user@host pass@host &&
 	GIT_TRACE_CURL="$(pwd)/trace" git clone --bare "$HTTPD_URL/auth/smart/repo.git" redact-auth &&
-	expect_askpass both user@host &&
+	expect_askpass both user%40host &&
 
 	# Ensure that there is no "Basic" followed by a base64 string, but that
 	# the auth details are redacted
-	! grep -i "Authorization: Basic [0-9a-zA-Z+/]" trace &&
-	grep -i "Authorization: Basic <redacted>" trace
+	test_grep ! -i "Authorization: Basic [0-9a-zA-Z+/]" trace &&
+	test_grep -i "Authorization: Basic <redacted>" trace
 '
 
 test_expect_success 'GIT_CURL_VERBOSE redacts auth details' '
 	rm -rf redact-auth trace &&
 	set_askpass user@host pass@host &&
 	GIT_CURL_VERBOSE=1 git clone --bare "$HTTPD_URL/auth/smart/repo.git" redact-auth 2>trace &&
-	expect_askpass both user@host &&
+	expect_askpass both user%40host &&
 
 	# Ensure that there is no "Basic" followed by a base64 string, but that
 	# the auth details are redacted
-	! grep -i "Authorization: Basic [0-9a-zA-Z+/]" trace &&
-	grep -i "Authorization: Basic <redacted>" trace
+	test_grep ! -i "Authorization: Basic [0-9a-zA-Z+/]" trace &&
+	test_grep -i "Authorization: Basic <redacted>" trace
 '
 
 test_expect_success 'GIT_TRACE_CURL does not redact auth details if GIT_TRACE_REDACT=0' '
@@ -256,9 +285,9 @@ test_expect_success 'GIT_TRACE_CURL does not redact auth details if GIT_TRACE_RE
 	set_askpass user@host pass@host &&
 	GIT_TRACE_REDACT=0 GIT_TRACE_CURL="$(pwd)/trace" \
 		git clone --bare "$HTTPD_URL/auth/smart/repo.git" redact-auth &&
-	expect_askpass both user@host &&
+	expect_askpass both user%40host &&
 
-	grep -i "Authorization: Basic [0-9a-zA-Z+/]" trace
+	test_grep -i "Authorization: Basic [0-9a-zA-Z+/]" trace
 '
 
 test_expect_success 'disable dumb http on server' '
@@ -275,7 +304,7 @@ test_expect_success 'GIT_SMART_HTTP can disable smart http' '
 
 test_expect_success 'invalid Content-Type rejected' '
 	test_must_fail git clone $HTTPD_URL/broken_smart/repo.git 2>actual &&
-	test_i18ngrep "not valid:" actual
+	test_grep "not valid:" actual
 '
 
 test_expect_success 'create namespaced refs' '
@@ -304,12 +333,12 @@ test_expect_success 'dumb clone via http-backend respects namespace' '
 
 test_expect_success 'cookies stored in http.cookiefile when http.savecookies set' '
 	cat >cookies.txt <<-\EOF &&
-	127.0.0.1	FALSE	/smart_cookies/	FALSE	0	othername	othervalue
+	127.0.0.1	FALSE	/smart_cookies	FALSE	0	othername	othervalue
 	EOF
 	sort >expect_cookies.txt <<-\EOF &&
-	127.0.0.1	FALSE	/smart_cookies/	FALSE	0	othername	othervalue
-	127.0.0.1	FALSE	/smart_cookies/repo.git/	FALSE	0	name	value
-	127.0.0.1	FALSE	/smart_cookies/repo.git/info/	FALSE	0	name	value
+	127.0.0.1	FALSE	/smart_cookies	FALSE	0	othername	othervalue
+	127.0.0.1	FALSE	/smart_cookies/repo.git	FALSE	0	name	value
+	127.0.0.1	FALSE	/smart_cookies/repo.git/info	FALSE	0	name	value
 	EOF
 	git config http.cookiefile cookies.txt &&
 	git config http.savecookies true &&
@@ -322,8 +351,11 @@ test_expect_success 'cookies stored in http.cookiefile when http.savecookies set
 		tag -m "foo" cookie-tag &&
 	git fetch $HTTPD_URL/smart_cookies/repo.git cookie-tag &&
 
-	grep "^[^#]" cookies.txt | sort >cookies_stripped.txt &&
-	test_cmp expect_cookies.txt cookies_stripped.txt
+	# Strip trailing slashes from cookie paths to handle output from both
+	# old curl ("/smart_cookies/") and new ("/smart_cookies").
+	HT="	" &&
+	grep "^[^#]" cookies.txt | sed "s,/$HT,$HT," | sort >cookies_clean.txt &&
+	test_cmp expect_cookies.txt cookies_clean.txt
 '
 
 test_expect_success 'transfer.hiderefs works over smart-http' '
@@ -359,19 +391,22 @@ create_tags () {
 
 	# now assign tags to all the dangling commits we created above
 	tag=$(perl -e "print \"bla\" x 30") &&
-	sed -e "s|^:\([^ ]*\) \(.*\)$|\2 refs/tags/$tag-\1|" <marks >>packed-refs
+	sed -e "s|^:\([^ ]*\) \(.*\)$|create refs/tags/$tag-\1 \2|" <marks >input &&
+	git update-ref --stdin <input &&
+	rm input
 }
 
 test_expect_success 'create 2,000 tags in the repo' '
+	git init --bare "$HTTPD_DOCUMENT_ROOT_PATH/many-tags.git" &&
 	(
-		cd "$HTTPD_DOCUMENT_ROOT_PATH/repo.git" &&
+		cd "$HTTPD_DOCUMENT_ROOT_PATH/many-tags.git" &&
 		create_tags 1 2000
 	)
 '
 
 test_expect_success CMDLINE_LIMIT \
 	'clone the 2,000 tag repo to check OS command line overflow' '
-	run_with_limited_cmdline git clone $HTTPD_URL/smart/repo.git too-many-refs &&
+	run_with_limited_cmdline git clone $HTTPD_URL/smart/many-tags.git too-many-refs &&
 	(
 		cd too-many-refs &&
 		git for-each-ref refs/tags >actual &&
@@ -384,7 +419,7 @@ test_expect_success 'large fetch-pack requests can be sent using chunked encodin
 		clone --bare "$HTTPD_URL/smart/repo.git" split.git 2>err &&
 	{
 		test_have_prereq HTTP2 ||
-		grep "^=> Send header: Transfer-Encoding: chunked" err
+		test_grep "^=> Send header: Transfer-Encoding: chunked" err
 	}
 '
 
@@ -447,13 +482,14 @@ test_expect_success 'test allowanysha1inwant with unreachable' '
 '
 
 test_expect_success EXPENSIVE 'http can handle enormous ref negotiation' '
+	test_when_finished "rm -f tags" &&
 	(
-		cd "$HTTPD_DOCUMENT_ROOT_PATH/repo.git" &&
+		cd "$HTTPD_DOCUMENT_ROOT_PATH/many-tags.git" &&
 		create_tags 2001 50000
 	) &&
 	git -C too-many-refs fetch -q --tags &&
 	(
-		cd "$HTTPD_DOCUMENT_ROOT_PATH/repo.git" &&
+		cd "$HTTPD_DOCUMENT_ROOT_PATH/many-tags.git" &&
 		create_tags 50001 100000
 	) &&
 	git -C too-many-refs fetch -q --tags &&
@@ -518,10 +554,10 @@ test_expect_success 'cookies are redacted by default' '
 	GIT_TRACE_CURL=true \
 		git -c "http.cookieFile=$(pwd)/cookies" clone \
 		$HTTPD_URL/smart/repo.git clone 2>err &&
-	grep -i "Cookie:.*Foo=<redacted>" err &&
-	grep -i "Cookie:.*Bar=<redacted>" err &&
-	! grep -i "Cookie:.*Foo=1" err &&
-	! grep -i "Cookie:.*Bar=2" err
+	test_grep -i "Cookie:.*Foo=<redacted>" err &&
+	test_grep -i "Cookie:.*Bar=<redacted>" err &&
+	test_grep ! -i "Cookie:.*Foo=1" err &&
+	test_grep ! -i "Cookie:.*Bar=2" err
 '
 
 test_expect_success 'empty values of cookies are also redacted' '
@@ -530,7 +566,7 @@ test_expect_success 'empty values of cookies are also redacted' '
 	GIT_TRACE_CURL=true \
 		git -c "http.cookieFile=$(pwd)/cookies" clone \
 		$HTTPD_URL/smart/repo.git clone 2>err &&
-	grep -i "Cookie:.*Foo=<redacted>" err
+	test_grep -i "Cookie:.*Foo=<redacted>" err
 '
 
 test_expect_success 'GIT_TRACE_REDACT=0 disables cookie redaction' '
@@ -540,25 +576,25 @@ test_expect_success 'GIT_TRACE_REDACT=0 disables cookie redaction' '
 	GIT_TRACE_REDACT=0 GIT_TRACE_CURL=true \
 		git -c "http.cookieFile=$(pwd)/cookies" clone \
 		$HTTPD_URL/smart/repo.git clone 2>err &&
-	grep -i "Cookie:.*Foo=1" err &&
-	grep -i "Cookie:.*Bar=2" err
+	test_grep -i "Cookie:.*Foo=1" err &&
+	test_grep -i "Cookie:.*Bar=2" err
 '
 
 test_expect_success 'GIT_TRACE_CURL_NO_DATA prevents data from being traced' '
 	rm -rf clone &&
 	GIT_TRACE_CURL=true \
 		git clone $HTTPD_URL/smart/repo.git clone 2>err &&
-	grep "=> Send data" err &&
+	test_grep "=> Send data" err &&
 
 	rm -rf clone &&
 	GIT_TRACE_CURL=true GIT_TRACE_CURL_NO_DATA=1 \
 		git clone $HTTPD_URL/smart/repo.git clone 2>err &&
-	! grep "=> Send data" err
+	test_grep ! "=> Send data" err
 '
 
 test_expect_success 'server-side error detected' '
 	test_must_fail git clone $HTTPD_URL/error_smart/repo.git 2>actual &&
-	test_i18ngrep "server-side error" actual
+	test_grep "server-side error" actual
 '
 
 test_expect_success 'http auth remembers successful credentials' '
@@ -568,7 +604,7 @@ test_expect_success 'http auth remembers successful credentials' '
 	# the first request prompts the user...
 	set_askpass user@host pass@host &&
 	git ls-remote "$HTTPD_URL/auth/smart/repo.git" >/dev/null &&
-	expect_askpass both user@host &&
+	expect_askpass both user%40host &&
 
 	# ...and the second one uses the stored value rather than
 	# prompting the user.
@@ -599,7 +635,7 @@ test_expect_success 'http auth forgets bogus credentials' '
 	# us to prompt the user again.
 	set_askpass user@host pass@host &&
 	git ls-remote "$HTTPD_URL/auth/smart/repo.git" >/dev/null &&
-	expect_askpass both user@host
+	expect_askpass both user%40host
 '
 
 test_expect_success 'client falls back from v2 to v0 to match server' '
@@ -608,13 +644,39 @@ test_expect_success 'client falls back from v2 to v0 to match server' '
 	git clone $HTTPD_URL/smart_v0/repo.git repo-v0 &&
 	# check for v0; there the HEAD symref is communicated in the capability
 	# line; v2 uses a different syntax on each ref advertisement line
-	grep symref=HEAD:refs/heads/ trace
+	test_grep symref=HEAD:refs/heads/ trace
+'
+
+test_expect_success 'create empty http-accessible SHA-256 repository' '
+	mkdir "$HTTPD_DOCUMENT_ROOT_PATH/sha256.git" &&
+	(cd "$HTTPD_DOCUMENT_ROOT_PATH/sha256.git" &&
+	 git --bare init --object-format=sha256
+	)
+'
+
+test_expect_success 'clone empty SHA-256 repository with protocol v2' '
+	rm -fr sha256 &&
+	echo sha256 >expected &&
+	git -c protocol.version=2 clone "$HTTPD_URL/smart/sha256.git" &&
+	git -C sha256 rev-parse --show-object-format >actual &&
+	test_cmp actual expected &&
+	git ls-remote "$HTTPD_URL/smart/sha256.git" >actual &&
+	test_must_be_empty actual
+'
+
+test_expect_success 'clone empty SHA-256 repository with protocol v0' '
+	rm -fr sha256 &&
+	echo sha256 >expected &&
+	GIT_TRACE=1 GIT_TRACE_PACKET=1 git -c protocol.version=0 clone "$HTTPD_URL/smart/sha256.git" &&
+	git -C sha256 rev-parse --show-object-format >actual &&
+	test_cmp actual expected &&
+	git ls-remote "$HTTPD_URL/smart/sha256.git" >actual &&
+	test_must_be_empty actual
 '
 
 test_expect_success 'passing hostname resolution information works' '
 	BOGUS_HOST=gitbogusexamplehost.invalid &&
 	BOGUS_HTTPD_URL=$HTTPD_PROTO://$BOGUS_HOST:$LIB_HTTPD_PORT &&
-	test_must_fail git ls-remote "$BOGUS_HTTPD_URL/smart/repo.git" >/dev/null &&
 	git -c "http.curloptResolve=$BOGUS_HOST:$LIB_HTTPD_PORT:127.0.0.1" ls-remote "$BOGUS_HTTPD_URL/smart/repo.git" >/dev/null
 '
 
@@ -630,7 +692,7 @@ test_expect_success 'clone warns or fails when using username:password' '
 
 	git -c transfer.credentialsInUrl=allow \
 		clone $url_userpass attempt1 2>err &&
-	! grep "$message" err &&
+	test_grep ! "$message" err &&
 
 	git -c transfer.credentialsInUrl=warn \
 		clone $url_userpass attempt2 2>err &&
@@ -659,12 +721,12 @@ test_expect_success 'clone does not detect username:password when it is https://
 	esac &&
 
 	git -c transfer.credentialsInUrl=warn clone $url_user attempt1 2>err &&
-	! grep "uses plaintext credentials" err
+	test_grep ! "uses plaintext credentials" err
 '
 
 test_expect_success 'fetch warns or fails when using username:password' '
 	git -c transfer.credentialsInUrl=allow fetch $url_userpass 2>err &&
-	! grep "$message" err &&
+	test_grep ! "$message" err &&
 
 	git -c transfer.credentialsInUrl=warn fetch $url_userpass 2>err &&
 	grep "warning: $message" err >warnings &&
@@ -684,7 +746,7 @@ test_expect_success 'fetch warns or fails when using username:password' '
 
 test_expect_success 'push warns or fails when using username:password' '
 	git -c transfer.credentialsInUrl=allow push $url_userpass 2>err &&
-	! grep "$message" err &&
+	test_grep ! "$message" err &&
 
 	git -c transfer.credentialsInUrl=warn push $url_userpass 2>err &&
 	grep "warning: $message" err >warnings &&
@@ -701,7 +763,32 @@ test_expect_success 'no empty path components' '
 	git clone $HTTPD_URL/smart/repo.git/ clone-with-slash &&
 
 	strip_access_log >log &&
-	! grep "//" log
+	test_grep ! "//" log
+'
+
+test_expect_success 'tag following always works over v0 http' '
+	upstream=$HTTPD_DOCUMENT_ROOT_PATH/tags &&
+	git init "$upstream" &&
+	(
+		cd "$upstream" &&
+		git commit --allow-empty -m base &&
+		git tag not-annotated &&
+		git tag -m foo annotated
+	) &&
+	git init tags &&
+	git -C tags -c protocol.version=0 \
+		fetch --depth 1 $HTTPD_URL/smart/tags \
+		refs/tags/annotated:refs/tags/annotated &&
+	git -C "$upstream" for-each-ref refs/tags >expect &&
+	git -C tags for-each-ref >actual &&
+	test_cmp expect actual
+'
+
+test_expect_success 'ls-remote outside repo does not segfault with fetch refspec' '
+	nongit git \
+		-c remote.origin.url="$HTTPD_URL/smart/repo.git" \
+		-c remote.origin.fetch=anything \
+		ls-remote origin
 '
 
 test_done

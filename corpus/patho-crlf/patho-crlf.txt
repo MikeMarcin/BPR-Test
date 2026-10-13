@@ -998,7 +998,7 @@ line 996 of a windows file
 line 997 of a windows file
 line 998 of a windows file
 line 999 of a windows file
-line 1000 of a windows file
+line 1000 was edited
 line 1001 of a windows file
 line 1002 of a windows file
 line 1003 of a windows file
