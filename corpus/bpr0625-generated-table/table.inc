@@ -1,4 +1,4 @@
-// Generated fixture version 0; do not edit.
+// Generated fixture version 1; do not edit.
 ENTRY(00001, 1)
 ENTRY(00002, 2)
 ENTRY(00003, 3)
