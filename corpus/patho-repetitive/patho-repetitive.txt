@@ -457,7 +457,7 @@
         value += step;
         check(value);
     }
-
+    // blank
     {
         value += step;
         check(value);
@@ -879,7 +879,7 @@
     }
 
     {
-        value += step;
+        value += stride;
         check(value);
     }
 
@@ -925,6 +925,7 @@
 
     {
         value += step;
+        log(value);
         check(value);
     }
 
@@ -1512,7 +1513,7 @@
         value += step;
         check(value);
     }
-
+    // blank
     {
         value += step;
         check(value);
@@ -1922,6 +1923,7 @@
         value += step;
         check(value);
     }
+        log(value);
 
     {
         value += step;
@@ -1934,7 +1936,7 @@
     }
 
     {
-        value += step;
+        value += stride;
         check(value);
     }
 
@@ -2567,7 +2569,7 @@
         value += step;
         check(value);
     }
-
+    // blank
     {
         value += step;
         check(value);
@@ -2919,6 +2921,7 @@
     }
 
     {
+        log(value);
         value += step;
         check(value);
     }
@@ -2989,7 +2992,7 @@
     }
 
     {
-        value += step;
+        value += stride;
         check(value);
     }
 
@@ -3622,7 +3625,7 @@
         value += step;
         check(value);
     }
-
+    // blank
     {
         value += step;
         check(value);
@@ -3916,6 +3919,7 @@
     {
         value += step;
         check(value);
+        log(value);
     }
 
     {
@@ -4044,7 +4048,7 @@
     }
 
     {
-        value += step;
+        value += stride;
         check(value);
     }
 
@@ -4677,7 +4681,7 @@
         value += step;
         check(value);
     }
-
+    // blank
     {
         value += step;
         check(value);
@@ -4913,6 +4917,7 @@
         check(value);
     }
 
+        log(value);
     {
         value += step;
         check(value);
@@ -5099,7 +5104,7 @@
     }
 
     {
-        value += step;
+        value += stride;
         check(value);
     }
 
@@ -5732,7 +5737,7 @@
         value += step;
         check(value);
     }
-
+    // blank
     {
         value += step;
         check(value);
@@ -5910,6 +5915,7 @@
 
     {
         value += step;
+        log(value);
         check(value);
     }
 
@@ -6154,7 +6160,7 @@
     }
 
     {
-        value += step;
+        value += stride;
         check(value);
     }
 
@@ -6787,7 +6793,7 @@
         value += step;
         check(value);
     }
-
+    // blank
     {
         value += step;
         check(value);
@@ -6907,6 +6913,7 @@
         value += step;
         check(value);
     }
+        log(value);
 
     {
         value += step;
@@ -7209,7 +7216,7 @@
     }
 
     {
-        value += step;
+        value += stride;
         check(value);
     }
 
@@ -7842,7 +7849,7 @@
         value += step;
         check(value);
     }
-
+    // blank
     {
         value += step;
         check(value);
@@ -7904,6 +7911,7 @@
     }
 
     {
+        log(value);
         value += step;
         check(value);
     }
@@ -8264,7 +8272,7 @@
     }
 
     {
-        value += step;
+        value += stride;
         check(value);
     }
 
@@ -8897,10 +8905,11 @@
         value += step;
         check(value);
     }
-
+    // blank
     {
         value += step;
         check(value);
+        log(value);
     }
 
     {
@@ -9319,7 +9328,7 @@
     }
 
     {
-        value += step;
+        value += stride;
         check(value);
     }
 
@@ -9898,6 +9907,7 @@
         check(value);
     }
 
+        log(value);
     {
         value += step;
         check(value);
@@ -9952,7 +9962,7 @@
         value += step;
         check(value);
     }
-
+    // blank
     {
         value += step;
         check(value);
