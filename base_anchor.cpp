@@ -5,5 +5,5 @@ int value()
 
 int other()
 {
-	return value() + 1;
+	return value() + 2;
 }
