@@ -1,4 +1,9 @@
 int value()
 {
-	return 4; // third
+	return 5; // fourth
+}
+
+int other()
+{
+	return 0;
 }
