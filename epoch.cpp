@@ -1,4 +1,4 @@
 int value()
 {
-	return 1;
+	return 4; // third
 }
