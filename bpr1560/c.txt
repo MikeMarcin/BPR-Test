@@ -7,7 +7,7 @@ c line 6
 c line 7
 c line 8
 c line 9
-c line 10
+c line 10 MAIN-1
 c line 11
 c line 12
 c line 13
