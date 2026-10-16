@@ -1,9 +1,9 @@
 int value()
 {
-	return 5; // fourth
+	return 6; // fifth
 }
 
 int other()
 {
-	return 0;
+	return 1;
 }
