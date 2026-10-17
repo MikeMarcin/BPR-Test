@@ -1,6 +1,6 @@
 y line 1
 y line 2
-y line 3
+y line 3 B-2
 y line 4
 y line 5
 y line 6
