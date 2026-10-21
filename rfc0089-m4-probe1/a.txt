@@ -1,8 +1,10 @@
+inserted 1 C2
+inserted 2 C2
 a line 1
 a line 2
 a line 3
 a line 4
-a line 5 C1
+a line 5 C2
 a line 6
 a line 7
 a line 8
