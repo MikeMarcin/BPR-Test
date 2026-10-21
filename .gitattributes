@@ -1,3 +1,4 @@
-base_only/** linguist-generated
+head_only/** linguist-generated
 both/** linguist-generated
-commit_only/** linguist-generated
+*.gen linguist-generated
+neg/keep.gen -linguist-generated
