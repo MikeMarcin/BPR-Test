@@ -1,8 +1,10 @@
+inserted 1 C3
+inserted 2 C3
 notes line 1
 notes line 2
 notes line 3
 notes line 4
-notes line 5 C1
+notes line 5 C3
 notes line 6
 notes line 7
 notes line 8
@@ -22,7 +24,7 @@ notes line 21
 notes line 22
 notes line 23
 notes line 24
-notes line 25 C1
+notes line 25 C3
 notes line 26
 notes line 27
 notes line 28
