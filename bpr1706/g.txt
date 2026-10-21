@@ -1,6 +1,6 @@
 g line 1
 g line 2
-g line 3
+C2 edit g 3
 g line 4
 g line 5
 g line 6

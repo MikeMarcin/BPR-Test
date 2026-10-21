@@ -1,8 +1,10 @@
+C2 inserted 1
+C2 inserted 2
 base line 1
 base line 2
 base line 3
 base line 4
-C1 edit 5
+C2 edit of C1's line 5
 base line 6
 base line 7
 base line 8
