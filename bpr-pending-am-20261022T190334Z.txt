@@ -7,7 +7,7 @@ line 06 of the comment-anywhere probe
 line 07 of the comment-anywhere probe
 line 08 of the comment-anywhere probe
 line 09 of the comment-anywhere probe
-line 10 of the comment-anywhere probe
+line 10 CHANGED by the comment-anywhere probe
 line 11 of the comment-anywhere probe
 line 12 of the comment-anywhere probe
 line 13 of the comment-anywhere probe
