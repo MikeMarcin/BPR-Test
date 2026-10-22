@@ -1,15 +1,15 @@
 int value_1 = 1;
 int value_2 = 2;
 int value_3 = 3;
-int value_4 = 4;
-int value_5 = 5;
+int value_4_5 = 4 + 5;
 int value_6 = compute(6);
-int value_7 = 7;
 int value_8 = 8;
+// nine
 int value_9 = 9;
+// done
 int value_10 = 10;
 int value_11 = 11;
-int value_12 = 12;
+const char* fence = "```";
 int value_13 = 13;
 int value_14 = compute(14);
 int value_15 = 15;
