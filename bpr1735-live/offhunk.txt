@@ -7,7 +7,7 @@ line 06 of the BPR-1735 off-hunk fixture
 line 07 of the BPR-1735 off-hunk fixture
 line 08 of the BPR-1735 off-hunk fixture
 line 09 of the BPR-1735 off-hunk fixture
-line 10 of the BPR-1735 off-hunk fixture
+line 10 changed by the head
 line 11 of the BPR-1735 off-hunk fixture
 line 12 of the BPR-1735 off-hunk fixture
 line 13 of the BPR-1735 off-hunk fixture
