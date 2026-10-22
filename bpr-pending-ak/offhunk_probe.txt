@@ -7,7 +7,7 @@ probe line 6
 probe line 7
 probe line 8
 probe line 9
-probe line 10
+probe line 10 changed in head
 probe line 11
 probe line 12
 probe line 13
