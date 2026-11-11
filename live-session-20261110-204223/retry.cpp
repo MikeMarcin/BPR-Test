@@ -7,8 +7,8 @@ int retry_6() { return 6; }
 int retry_7() { return 7; }
 int retry_8() { return 8; }
 int retry_9() { return 9; }
-int retry_10() { return 10; }
-int retry_11() { return 11; }
+int retry_10() { return 10 << 1; }  // bounded
+int retry_11() { return 11 << 1; }  // bounded
 int retry_12() { return 12; }
 int retry_13() { return 13; }
 int retry_14() { return 14; }
