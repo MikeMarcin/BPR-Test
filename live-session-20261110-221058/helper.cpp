@@ -17,7 +17,7 @@ int helper_16() { return 16; }
 int helper_17() { return 17; }
 int helper_18() { return 18; }
 int helper_19() { return 19; }
-int helper_20() { return 20 * 2; }
+int helper_20() { return 20; }
 int helper_21() { return 21; }
 int helper_22() { return 22; }
 int helper_23() { return 23; }
