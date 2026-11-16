@@ -2,7 +2,7 @@
 
 import time
 
-from feedsync.errors import AuthError, FetchError, ParseError
+from feedsync.errors import AuthError, FetchError, ParseError  # noqa: F401
 from feedsync.sources import atom, jsonfeed, rss
 
 FETCHERS = {"rss": rss.fetch, "atom": atom.fetch, "json": jsonfeed.fetch}
@@ -42,7 +42,7 @@ def run_once(settings, store, cache, now=time.time, sleep=time.sleep, log=print)
             needs_credentials.append(source.name)
             store.record_poll(source.name, now(), False)
             continue
-        except (FetchError, ParseError) as error:
+        except Exception as error:
             log(f"{source.name}: {error}")
             failed.append(source.name)
             store.record_poll(source.name, now(), False)

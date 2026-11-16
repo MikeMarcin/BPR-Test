@@ -3,7 +3,6 @@
 import tomllib
 from dataclasses import dataclass, field
 
-DEFAULT_TIMEOUT_SECONDS = 10
 DEFAULT_RETRIES = 3
 DEFAULT_BACKOFF_SECONDS = 1.0
 DEFAULT_INTERVAL_SECONDS = 900
@@ -22,7 +21,6 @@ class Source:
 @dataclass(frozen=True)
 class Settings:
     sources: tuple
-    timeout: int = DEFAULT_TIMEOUT_SECONDS
     retries: int = DEFAULT_RETRIES
     backoff: float = DEFAULT_BACKOFF_SECONDS
     store_path: str = "feedsync.db"
@@ -50,7 +48,6 @@ def load(path):
     fetch = raw.get("fetch", {})
     return Settings(
         sources=tuple(sources),
-        timeout=int(fetch.get("timeout", DEFAULT_TIMEOUT_SECONDS)),
         retries=int(fetch.get("retries", DEFAULT_RETRIES)),
         backoff=float(fetch.get("backoff", DEFAULT_BACKOFF_SECONDS)),
         store_path=raw.get("store", {}).get("path", "feedsync.db"),

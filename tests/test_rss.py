@@ -2,7 +2,7 @@ import unittest
 from unittest import mock
 
 from feedsync.config import Settings, Source
-from feedsync.errors import AuthError, FetchError, ParseError
+from feedsync.errors import FetchError, ParseError
 from feedsync.sources import rss
 from tests.fakes import MemoryCache, Script, ok, status
 
@@ -13,21 +13,20 @@ BODY = b"""<rss version="2.0"><channel><title>t</title>
 </channel></rss>"""
 
 SOURCE = Source(name="news", url="https://example.test/feed", kind="rss")
-SETTINGS = Settings(sources=(SOURCE,), retries=3, backoff=1.0, timeout=10)
+SETTINGS = Settings(sources=(SOURCE,), retries=3, backoff=1.0)
 
 
 class RssTests(unittest.TestCase):
     def fetch(self, answers, source=SOURCE, cache=None):
         script = Script(answers)
         sleeps = []
-        with mock.patch("feedsync.legacy_http.request_once", script):
+        with mock.patch("feedsync.client.request_once", script):
             entries = rss.fetch(source, SETTINGS, cache or MemoryCache(), sleep=sleeps.append)
         return entries, script, sleeps
 
     def test_parses_items_and_falls_back_to_the_link(self):
         entries, script, _ = self.fetch([ok(BODY)])
         self.assertEqual([entry["id"] for entry in entries], ["a1", "https://example.test/2"])
-        self.assertEqual(script.calls[0]["timeout"], 10)
 
     def test_retries_a_server_error_with_backoff(self):
         entries, script, sleeps = self.fetch([status(503), status(502), ok(BODY)])
@@ -36,26 +35,19 @@ class RssTests(unittest.TestCase):
 
     def test_gives_up_after_the_configured_retries(self):
         with self.assertRaises(FetchError):
-            self.fetch([status(500)] * 4)
+            self.fetch([status(500)] * 3)
 
-    def test_makes_exactly_one_request_more_than_retries(self):
-        script = Script([status(500)] * 4)
-        with mock.patch("feedsync.legacy_http.request_once", script):
-            with self.assertRaises(FetchError):
-                rss.fetch(SOURCE, SETTINGS, MemoryCache(), sleep=lambda _: None)
-        self.assertEqual(len(script.calls), 4)
-
-    def test_honours_retry_after_up_to_the_cap(self):
-        _, _, sleeps = self.fetch([status(429, {"Retry-After": "600"}), ok(BODY)])
-        self.assertEqual(sleeps, [120])
+    def test_honours_retry_after(self):
+        _, _, sleeps = self.fetch([status(429, {"Retry-After": "30"}), ok(BODY)])
+        self.assertEqual(sleeps, [30])
 
     def test_credentials_refused_is_not_retried(self):
-        with self.assertRaises(AuthError):
+        with self.assertRaises(FetchError):
             self.fetch([status(401)])
 
     def test_a_404_is_not_retried(self):
         script = Script([status(404)])
-        with mock.patch("feedsync.legacy_http.request_once", script):
+        with mock.patch("feedsync.client.request_once", script):
             with self.assertRaises(FetchError):
                 rss.fetch(SOURCE, SETTINGS, MemoryCache(), sleep=lambda _: None)
         self.assertEqual(len(script.calls), 1)

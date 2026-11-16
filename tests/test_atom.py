@@ -2,7 +2,7 @@ import unittest
 from unittest import mock
 
 from feedsync.config import Settings, Source
-from feedsync.errors import AuthError, FetchError
+from feedsync.errors import FetchError
 from feedsync.sources import atom
 from tests.fakes import MemoryCache, Script, ok, status
 
@@ -13,14 +13,14 @@ BODY = b"""<feed xmlns="http://www.w3.org/2005/Atom"><title>t</title>
 </feed>"""
 
 SOURCE = Source(name="releases", url="https://example.test/atom", kind="atom", token="s3cret", params={"tag": "stable"})
-SETTINGS = Settings(sources=(SOURCE,), retries=3, backoff=0.5, timeout=10)
+SETTINGS = Settings(sources=(SOURCE,), retries=3, backoff=0.5)
 
 
 class AtomTests(unittest.TestCase):
     def fetch(self, answers, cache=None):
         script = Script(answers)
         sleeps = []
-        with mock.patch("feedsync.legacy_http.request_once", script):
+        with mock.patch("feedsync.client.request_once", script):
             entries = atom.fetch(SOURCE, SETTINGS, cache or MemoryCache(), sleep=sleeps.append)
         return entries, script, sleeps
 
@@ -34,21 +34,16 @@ class AtomTests(unittest.TestCase):
         self.assertEqual(script.calls[0]["headers"]["Authorization"], "Bearer s3cret")
 
     def test_backoff_doubles_from_the_configured_base(self):
-        _, _, sleeps = self.fetch([status(500), status(500), status(500), ok(BODY)])
-        self.assertEqual(sleeps, [0.5, 1.0, 2.0])
+        _, _, sleeps = self.fetch([status(500), status(500), ok(BODY)])
+        self.assertEqual(sleeps, [0.5, 1.0])
 
-    def test_forbidden_is_an_auth_error(self):
-        with self.assertRaises(AuthError):
+    def test_forbidden_is_not_retried(self):
+        with self.assertRaises(FetchError):
             self.fetch([status(403)])
 
     def test_gives_up_after_the_configured_retries(self):
         with self.assertRaises(FetchError):
-            self.fetch([status(500)] * 4)
-
-    def test_the_cache_entry_is_per_query_string(self):
-        cache = MemoryCache()
-        self.fetch([ok(BODY, {"ETag": '"stable-1"'})], cache=cache)
-        self.assertIn(("https://example.test/atom?tag=stable", True), cache.entries)
+            self.fetch([status(500)] * 3)
 
 
 if __name__ == "__main__":

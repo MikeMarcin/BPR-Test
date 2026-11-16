@@ -3,44 +3,14 @@
 import json
 import time
 
-from feedsync import legacy_http
-from feedsync.errors import AuthError, FetchError, ParseError
-
-MAX_RETRY_AFTER_SECONDS = 120
+from feedsync import client
+from feedsync.errors import ParseError
 
 
 def fetch(source, settings, cache, sleep=time.sleep):
-    """Fetch and parse one JSON Feed source. Returns its entries, or None when
-    the source answered 304 and nothing changed."""
-    url = legacy_http.build_url(source.url, source.params)
-    headers = legacy_http.auth_headers(source.token)
-    headers["Accept"] = "application/feed+json, application/json;q=0.9"
-    headers.update(cache.validators(url, source.token))
-    attempt = 0
-    while True:
-        try:
-            response = legacy_http.request_once(url, headers, settings.timeout)
-        except OSError as error:
-            if attempt >= settings.retries:
-                raise FetchError(url, None, str(error)) from error
-            sleep(settings.backoff * (2**attempt))
-            attempt += 1
-            continue
-        if response.status == 304:
-            return None
-        if response.status in (401, 403):
-            raise AuthError(url, response.status, "credentials refused")
-        if response.status == 200:
-            cache.store(url, source.token, response.headers, response.body)
-            return parse(url, response.body)
-        if not legacy_http.is_retryable(response.status) or attempt >= settings.retries:
-            raise FetchError(url, response.status, "giving up")
-        retry_after = response.headers.get("Retry-After")
-        if retry_after and retry_after.isdigit():
-            sleep(min(int(retry_after), MAX_RETRY_AFTER_SECONDS))
-        else:
-            sleep(settings.backoff * (2**attempt))
-        attempt += 1
+    """Fetch and parse one JSON Feed source; None when nothing changed."""
+    body = client.get(source, settings, cache, "application/feed+json, application/json;q=0.9", sleep=sleep)
+    return None if body is None else parse(source.url, body)
 
 
 def parse(url, body):

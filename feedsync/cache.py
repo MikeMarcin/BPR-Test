@@ -7,12 +7,7 @@ import threading
 
 
 class Cache:
-    """Validators and bodies by request key, kept in one JSON file.
-
-    The key is the full request URL, query string included, plus whether the
-    request carried a token: two sources that differ only by a query
-    parameter or by credentials never share an entry.
-    """
+    """Validators and bodies by source URL, kept in one JSON file."""
 
     def __init__(self, path):
         self._path = path
@@ -23,17 +18,13 @@ class Cache:
                 self._entries = json.load(handle)
 
     @staticmethod
-    def key(url, token):
-        digest = hashlib.sha256()
-        digest.update(url.encode("utf-8"))
-        digest.update(b"\0")
-        digest.update(b"auth" if token else b"anon")
-        return digest.hexdigest()
+    def key(url):
+        return hashlib.sha256(url.encode("utf-8")).hexdigest()
 
-    def validators(self, url, token):
+    def validators(self, url):
         """The conditional headers to send for this request, if any."""
         with self._lock:
-            entry = self._entries.get(self.key(url, token))
+            entry = self._entries.get(self.key(url))
         if entry is None:
             return {}
         headers = {}
@@ -43,15 +34,15 @@ class Cache:
             headers["If-Modified-Since"] = entry["modified"]
         return headers
 
-    def body(self, url, token):
+    def body(self, url):
         """The body last stored for this request, or None."""
         with self._lock:
-            entry = self._entries.get(self.key(url, token))
+            entry = self._entries.get(self.key(url))
         if entry is None:
             return None
         return bytes.fromhex(entry["body"])
 
-    def store(self, url, token, headers, body):
+    def store(self, url, headers, body):
         """Remember a 200's validators and body, and write the file."""
         lowered = {name.lower(): value for name, value in headers.items()}
         entry = {
@@ -59,13 +50,12 @@ class Cache:
             "modified": lowered.get("last-modified"),
             "body": body.hex(),
         }
-        with self._lock:
-            self._entries[self.key(url, token)] = entry
-            self._write()
+        self._entries[self.key(url)] = entry
+        self._write()
 
-    def forget(self, url, token):
+    def forget(self, url):
         with self._lock:
-            self._entries.pop(self.key(url, token), None)
+            self._entries.pop(self.key(url), None)
             self._write()
 
     def _write(self):

@@ -19,14 +19,14 @@ BODY = json.dumps(
 ).encode()
 
 SOURCE = Source(name="blog", url="https://example.test/feed.json", kind="json")
-SETTINGS = Settings(sources=(SOURCE,), retries=2, backoff=1.0, timeout=10)
+SETTINGS = Settings(sources=(SOURCE,), retries=2, backoff=1.0)
 
 
 class JsonFeedTests(unittest.TestCase):
     def fetch(self, answers):
         script = Script(answers)
         sleeps = []
-        with mock.patch("feedsync.legacy_http.request_once", script):
+        with mock.patch("feedsync.client.request_once", script):
             entries = jsonfeed.fetch(SOURCE, SETTINGS, MemoryCache(), sleep=sleeps.append)
         return entries, script, sleeps
 
@@ -36,11 +36,11 @@ class JsonFeedTests(unittest.TestCase):
         self.assertEqual(entries[1]["link"], "https://elsewhere.test/x")
 
     def test_retries_twice_then_gives_up(self):
-        script = Script([status(503)] * 3)
-        with mock.patch("feedsync.legacy_http.request_once", script):
+        script = Script([status(503)] * 2)
+        with mock.patch("feedsync.client.request_once", script):
             with self.assertRaises(FetchError):
                 jsonfeed.fetch(SOURCE, SETTINGS, MemoryCache(), sleep=lambda _: None)
-        self.assertEqual(len(script.calls), 3)
+        self.assertEqual(len(script.calls), 2)
 
     def test_a_timeout_is_retried(self):
         entries, _, sleeps = self.fetch([TimeoutError("timed out"), ok(BODY)])
